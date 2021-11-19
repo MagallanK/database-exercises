@@ -1,13 +1,13 @@
 USE test_db;
 
-SELECT * # 1
+SELECT * # 2
 FROM employees
 WHERE first_name IN ('Irena', 'Vidya', 'Maya');
 
-SELECT * # 2
+SELECT * # 3
 FROM employees
 WHERE last_name LIKE ('E%'); # THE % INDICATES REMAINING CHARACTERS. This shows Start with E, if it was %E it would be ends with E.
-SELECT * # 3
+SELECT * # 4
 FROM employees
 WHERE last_name LIKE ('%q%'); #The double % with q in between is to show if that letter q is present.
 
@@ -24,12 +24,12 @@ FROM employees
 WHERE last_name LIKE ('%E')
 OR last_name LIKE ('E%');
 
-SELECT * # 3
+SELECT * # 3 & 4
 FROM employees
 WHERE last_name LIKE ('%E')
 AND last_name LIKE ('E%');
 
-SELECT * # 4
+SELECT * # 5
 FROM employees
 WHERE last_name LIKE ('%q%')
 AND last_name NOT LIKE ('%qu%');
