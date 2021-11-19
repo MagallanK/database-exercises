@@ -9,19 +9,21 @@ ORDER BY first_name;
 # 2 does this work the same as above? Or which is more efficient? Readability wise I like the above code.
 SELECT *
 FROM employees
-WHERE first_name AND last_name
+WHERE first_name
+  AND last_name
 ORDER BY first_name, last_name;
 
 # 3 below
 SELECT *
 FROM employees
-WHERE first_name AND last_name
+WHERE first_name
+  AND last_name
 ORDER BY last_name DESC, first_name;
 
 # 4 below
 SELECT *
 FROM employees
-ORDER BY first_name DESC,  last_name;
+ORDER BY first_name DESC, last_name;
 
 # 5 below
 SELECT *
@@ -31,11 +33,13 @@ ORDER BY emp_no DESC;
 
 # ------------------------------------FUNCTIONS EXERCISES -----------------------#
 
-# 2 START AND END WITH E
+# 2 START AND END WITH E updated DURING REVIEW to show employees who start and with E in first and last_names.
 SELECT CONCAT(first_name, ' ', last_name)
 FROM employees
 WHERE first_name LIKE '%E'
-AND first_name LIKE 'E%';
+AND first_name LIKE 'E%'
+AND last_name LIKE '%E'
+AND last_name LIKE 'E%';
 # 2 CONT. BY LAST NAME START AND END WITH E
 SELECT CONCAT(first_name, ' ', last_name)
 FROM employees
@@ -46,7 +50,7 @@ AND last_name LIKE 'E%';
 SELECT *
 FROM employees
 WHERE month(birth_date) = 12
-  AND day(birth_date) = 25;
+AND day(birth_date) = 25;
 
 # 4 EMPLOYEES HIRED IN 90S AND BORN XMAS
 SELECT *
